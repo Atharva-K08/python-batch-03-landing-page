@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load static %}
+{% block title %}
+Landing Page
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card p-3 flex-column-reverse flex-lg-row gap-2 text-light rounded-4 shadow pb-lg-0 mb-3"
+    style="
+    background-image: radial-gradient( circle farthest-corner at 72.7% 49.8%,  #405fab 0%, #13306f 100.2% );
+    "
+    >
+        <div class="d-flex justify-content-center flex-column ms-4 gap-2">
+            <h1 style="font-size:55px">Elevate Your Audio Journey</h1>
+            <p class="w-75">Experience Sound In Its Purest FormMorbi Justo Sem, Venenatis Sit Amet Tortor Id,
+            Porttitor Facilisis Metus. Ut Scelerisque MaurisVivamus Fringilla Elit Eu Felis laculis
+            Cursus. Integer Ullamcorper Libero Vel Orci Tristique, In Ullamcorper Est Luctus.
+            Ligula Felis. Proin Interdum Velit Quam, Ut laculis Ipsum Tempor Nec ..
+            </p>
+            <div class="d-flex gap-4">
+                <button class="btn btn-primary">Shop Now</button>
+                <button class="btn btn-outline-light">Learn More</button>
+            </div>
+        </div>
+        <img img="100" src="{% static "images/brand-face.png" %}" alt="">
+    </div>
+</div>
+{% endblock %}

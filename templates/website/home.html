@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<h3 class="text-center my-4">Student List</h3>
+<div class="container">
+    <table class="table table-bordered table-hover shadow">
+    <thead class="table-dark">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student in studentList %}
+            <tr>
+                <td>{{ student.rollNo }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.city }}</td>
+                <td>{{ student.age }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}

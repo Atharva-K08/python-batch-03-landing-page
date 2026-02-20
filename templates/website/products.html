@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% block title %}Product Page{% endblock %} 
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-evenly">
+    {% for product in products %}
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-3">
+      <div class="shadow card border-0">
+        <div
+          class="card-body text-center d-flex flex-column gap-2"
+          style="font-size: 12px; color: #2a4b34"
+        >
+          <img class="img-fluid rounded-3" src="{{product.image}}" alt="" />
+          <div class="h5 text-center my-1">{{product.title}}</div>
+          <div>Material: {{product.material}}</div>
+          <div>{{product.description}}</div>
+          <div>
+            {% for size in product.sizes %}
+            <div class="d-flex justify-content-between my-2">
+              <div>{{size.contry}}</div>
+              <div>{{size.value}}</div>
+            </div>
+            {% endfor %}
+          </div>
+          <div>
+            <div
+              class="bg-warning-subtle mx-auto p-1 rounded border border-warning"
+            >
+              {{ product.usage|join:" • " }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
