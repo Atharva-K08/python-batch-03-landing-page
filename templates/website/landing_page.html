@@ -1,16 +1,16 @@
 {% extends "layout.html" %}
 {% load static %}
+
 {% block title %}
 Landing Page
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="card p-3 flex-column-reverse flex-lg-row gap-2 text-light rounded-4 shadow pb-lg-0 mb-3"
-    style="
-    background-image: radial-gradient( circle farthest-corner at 72.7% 49.8%,  #405fab 0%, #13306f 100.2% );
-    "
-    >
+<div class="container"> 
+    <div id="banner"
+        class="card p-3 flex-column-reverse flex-lg-row gap-2 text-light rounded-4 shadow pb-lg-0 mb-3"
+        style="background-image: radial-gradient( circle farthest-corner at 72.7% 49.8%,  #405fab 0%, #13306f 100.2% );"
+        >
         <div class="d-flex justify-content-center flex-column ms-4 gap-2">
             <h1 style="font-size:55px">Elevate Your Audio Journey</h1>
             <p class="w-75">Experience Sound In Its Purest FormMorbi Justo Sem, Venenatis Sit Amet Tortor Id,
@@ -24,6 +24,36 @@ Landing Page
             </div>
         </div>
         <img img="100" src="{% static "images/brand-face.png" %}" alt="">
+    </div>
+    <div id="featured-products">
+        <div class="d-flex justify-content-between">
+            <h2 class="fw-bolder">Featured Products</h2>
+            <button class="btn btn-primary btn-sm fw-bold px-4 shadow align-items-center">
+                See All Products
+            </button>
+        </div>
+        <div class="row">
+            {% for prod in featured_products %}
+                <div class="col-4 my-5 px-4">
+                    <div class="card border-0 p-4 pt-5 rounded-4" style="background-color: #E6E7F2;">
+                        <div class="cad-body">
+                            <div class="p-2">
+                                <img class="img-fluid" src={% static prod.image %} alt="">
+                            </div>
+                            <div class="text-secondary fw-bold">
+                                {{prod.category}}
+                            </div>
+                            <h4 class="fw-bolder">
+                                {{prod.model}}
+                            </h4>
+                            <div class="text-primary fw-bold">
+                                {{prod.price}} USD
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}

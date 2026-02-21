@@ -29,8 +29,8 @@ def product_page(request):
             "material": "100% Cotton and 80/20 Cotton Blend",
             "description": "Soft, absorbent, and durable towels designed for everyday comfort and luxury.",
             "sizes": [
-                {"contry": "Indian (cm)","value": "70 x 140"},
-                {"contry": "US / EU (inches)","value": "27 x 52 / 30 x 56"},
+                {"contry": "Indian (cm)", "value": "70 x 140"},
+                {"contry": "US / EU (inches)", "value": "27 x 52 / 30 x 56"},
             ],
             "usage": [
                 "Hospitality", "Home", "Retail"
@@ -42,8 +42,8 @@ def product_page(request):
             "material": "100% Cotton and 80/20 Cotton Blend",
             "description": "Quick-dry, highly absorbent towels perfect for hotels, spas, and homes.",
             "sizes": [
-                {"contry": "Indian (cm)","value": "40 × 60 / 40 × 70"},
-                {"contry": "US / EU (inches)","value": "16 × 28 / 18 × 30"},
+                {"contry": "Indian (cm)", "value": "40 × 60 / 40 × 70"},
+                {"contry": "US / EU (inches)", "value": "16 × 28 / 18 × 30"},
             ],
             "usage": [
                 "Spas", "Home", "Wellness"
@@ -55,8 +55,8 @@ def product_page(request):
             "material": "100% Cotton and 80/20 Cotton Blend",
             "description": "Gentle and skin-friendly towels crafted for personal care and premium guest amenities.",
             "sizes": [
-                {"contry": "Indian (cm)","value": "30 x 30"},
-                {"contry": "US / EU (inches)","value": "12 x 12"},
+                {"contry": "Indian (cm)", "value": "30 x 30"},
+                {"contry": "US / EU (inches)", "value": "12 x 12"},
             ],
             "usage": [
                 "Personal Care", "Spa Kits", "Gifting"
@@ -68,8 +68,8 @@ def product_page(request):
             "material": "100% Cotton and 80/20 Cotton Blend",
             "description": "Gentle and skin-friendly towels crafted for personal care and premium guest amenities.",
             "sizes": [
-                {"contry": "Indian (cm)","value": "30 x 30"},
-                {"contry": "US / EU (inches)","value": "12 x 12"},
+                {"contry": "Indian (cm)", "value": "30 x 30"},
+                {"contry": "US / EU (inches)", "value": "12 x 12"},
             ],
             "usage": [
                 "Personal Care", "Spa Kits", "Gifting"
@@ -81,8 +81,8 @@ def product_page(request):
             "material": "100% Cotton and 80/20 Cotton Blend",
             "description": "Gentle and skin-friendly towels crafted for personal care and premium guest amenities.",
             "sizes": [
-                {"contry": "Indian (cm)","value": "30 x 30"},
-                {"contry": "US / EU (inches)","value": "12 x 12"},
+                {"contry": "Indian (cm)", "value": "30 x 30"},
+                {"contry": "US / EU (inches)", "value": "12 x 12"},
             ],
             "usage": [
                 "Personal Care", "Spa Kits", "Gifting"
@@ -94,8 +94,8 @@ def product_page(request):
             "material": "100% Cotton and 80/20 Cotton Blend",
             "description": "Gentle and skin-friendly towels crafted for personal care and premium guest amenities.",
             "sizes": [
-                {"contry": "Indian (cm)","value": "30 x 30"},
-                {"contry": "US / EU (inches)","value": "12 x 12"},
+                {"contry": "Indian (cm)", "value": "30 x 30"},
+                {"contry": "US / EU (inches)", "value": "12 x 12"},
             ],
             "usage": [
                 "Personal Care", "Spa Kits", "Gifting"
@@ -104,5 +104,26 @@ def product_page(request):
     ]
     return render(request, "website/products.html", {"products": products})
 
+
 def landing_page(request):
-    return render(request, "website/landing_page.html")
+    featured_products = [
+        {
+            "image": "images/1.png",
+            "category": "Earbuds",
+            "model": "Model X100",
+            "price": "$129.99"
+        },
+        {
+            "image": "images/2.png",
+            "category": "Headphones",
+            "model": "Model S200",
+            "price": "$299.99"
+        },
+        {
+            "image": "images/3.png",
+            "category": "Speakers",
+            "model": "Model B300",
+            "price": "$289.99"
+        },
+    ]
+    return render(request, "website/landing_page.html", {"featured_products": featured_products})
