@@ -34,7 +34,7 @@ Landing Page
         </div>
         <div class="row">
             {% for prod in featured_products %}
-                <div class="col-4 my-5 px-4">
+                <div class="col-12 col-lg-4 my-5 px-4">
                     <div class="card border-0 p-4 pt-5 rounded-4" style="background-color: #E6E7F2;">
                         <div class="cad-body">
                             <div class="p-2">
@@ -49,6 +49,37 @@ Landing Page
                             <div class="text-primary fw-bold">
                                 {{prod.price}} USD
                             </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between px-2">
+                    <h1 class="m-0">Shop By Category</h1>
+                <div>
+                    <button class="border border-1 p-0 m-0 rounded-circle border-black bg-white" style="height: 40px; width: 40px;">-&gt;</button>
+                    <button class="border border-1 p-0 m-0 rounded-circle border-black bg-white" style="height: 40px; width: 40px;">&lt;-</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for prod in shopItems %}
+                <div class="col-12 col-lg-4 my-5 px-4 h-100">
+                    <div class="card border-0 rounded-4" style="background-color: #E6E7F2;">
+                        <div class="card-body">
+                            <div class="fw-bold fs-5">
+                                {{prod.category}}
+                            </div>
+                            <p class="text-secondary" style="font-size:12px">
+                                {{prod.description}}
+                            </p>
+                            <a class="text-decoration-none" href="">View Accessories &gt;</a>
+                        </div>
+                        <div>
+                            <img class="img-fluid" src={% static prod.image %} alt="">
                         </div>
                     </div>
                 </div>

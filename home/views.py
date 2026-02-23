@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import requests
 
 # Create your views here.
 
@@ -126,4 +127,6 @@ def landing_page(request):
             "price": "$289.99"
         },
     ]
-    return render(request, "website/landing_page.html", {"featured_products": featured_products})
+    response = requests.get("http://localhost:3000/shop")
+    shopItems = response.json()
+    return render(request, "website/landing_page.html", {"featured_products": featured_products, "shopItems": shopItems})

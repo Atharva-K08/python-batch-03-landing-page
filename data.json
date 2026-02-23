@@ -1,0 +1,19 @@
+{
+  "shop": [
+    {
+      "image": "images/4.png",
+      "category": "Speaker",
+      "description": "a book or other written or printed , regarded in terms of its  rather than its physical written or printed , regarded in terms."
+    },
+    {
+      "image": "images/5.png",
+      "category": "Accessories",
+      "description": "a notebook or other written or printed work,  in terms of its  rather than written or printed , regarded in terms its physical form."
+    },
+    {
+      "image": "images/6.png",
+      "category": "Wirelass  Charger",
+      "description": "a  written or prin, regarded in terms ted work,  in terms  its content rather written or printed , regarded in terms than its physical form."
+    }
+  ]
+}
